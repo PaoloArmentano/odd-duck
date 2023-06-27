@@ -6,9 +6,9 @@
 // querySelector returns the first element in the document that matches
 const productContainer = document.getElementById("productContainer");
 const resultsButton = document.getElementById("resultsButton");
-const image1 = document.querySelector("section img:first-child");
-const image2 = document.querySelector("section img:nth-child(2)");
-const image3 = document.querySelector("section img:nth-child(3)");
+const image1 = document.querySelector("img:first-child");
+const image2 = document.querySelector("img:nth-child(2)");
+const image3 = document.querySelector("img:nth-child(3)");
 
 let clicks = 0;
 const maxClicksAllowed = 25;
@@ -93,7 +93,7 @@ const pen = new Product("Pen Product", "./images/pen.jpg");
 const petSweep = new Product("Pet sweep Product", "./images/pet-sweep.jpg");
 const scissors = new Product("Scissors Product", "./images/scissors.jpg");
 const shark = new Product("Shark Product", "./images/shark.jpg");
-const sweep = new Product("Sweep Product", "./images/sweep.jpg");
+const sweep = new Product("Sweep Product", "./images/sweep.png");
 const tauntaun = new Product("Tauntaun Product", "./images/tauntaun.jpg");
 const unicorn = new Product("Unicors Product", "./images/unicors.jpg");
 const waterCan = new Product("Water can Product", "./images/water-can.jpg");
