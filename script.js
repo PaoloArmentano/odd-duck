@@ -36,9 +36,10 @@ const maxClicksAllowed = 25;
    // now we have two random numbers lets set the attributes of our images in the document.
    image1.src = allProducts[product1].src;
    image2.src = allProducts[product2].src;
+   image3.src = allProducts[product3].src;
    image1.alt = allProducts[product1].name;
    image2.alt = allProducts[product2].name;
-   image3.src = allProducts[product1].src;
+   image3.alt = allProducts[product3].name;
    allProducts[product1].views++;
    allProducts[product2].views++;
    allProducts[product3].views++;
