@@ -63,6 +63,7 @@ const maxClicksAllowed = 25;
        productContainer.className = "no-voting";
        resultsButton.addEventListener("click", renderResults);
        resultsButton.className = "clicks-allowed";
+       alert("You've used all your votes!")
      } else {
        renderProducts();
      }
@@ -95,7 +96,7 @@ const scissors = new Product("Scissors Product", "./images/scissors.jpg");
 const shark = new Product("Shark Product", "./images/shark.jpg");
 const sweep = new Product("Sweep Product", "./images/sweep.png");
 const tauntaun = new Product("Tauntaun Product", "./images/tauntaun.jpg");
-const unicorn = new Product("Unicors Product", "./images/unicors.jpg");
+const unicorn = new Product("Unicors Product", "./images/unicorn.jpg");
 const waterCan = new Product("Water can Product", "./images/water-can.jpg");
 const wineGlass = new Product("Wine glass Product", "./images/wine-glass.jpg");
 
