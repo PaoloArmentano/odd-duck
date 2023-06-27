@@ -44,3 +44,47 @@ const maxClicksAllowed = 25;
    allProducts[product2].views++;
    allProducts[product3].views++;
  }
+
+ function handleProductClick(event) {
+   if (event.target === productContainer) {
+     alert("Please click on an image");
+   } else {
+     clicks++;
+     // console.log(clicks);
+     let clickedProduct = event.target.alt;
+     for (let i = 0; i < allProducts.length; i++) {
+       if (clickedProduct === allProducts[i].name) {
+         allProducts[i].clicks++;
+         break;
+       }
+     }
+     if (clicks === maxClicksAllowed) {
+       productContainer.removeEventListener("click", handleProductClick);
+       productContainer.className = "no-voting";
+       resultsButton.addEventListener("click", renderResults);
+       resultsButton.className = "clicks-allowed";
+     } else {
+       renderProducts();
+     }
+   }
+ }
+
+const bag = new Product("Bag Product", "./images/bag.jpg");
+const banana = new Product("Banana Product", "./images/banana.jpg");
+const bathroom = new Product("Bathroom Product", "./images/bathroom.jpg");
+const boots = new Product("Boots Product", "./images/boots.jpg");
+const breakfast = new Product("Breakfast Product", "./images/breakfast.jpg");
+const bubblegum = new Product("Bubblegum Product", "./images/bubblegum.jpg");
+const chair = new Product("Chair Product", "./images/chair.jpg");
+const cthulhu = new Product("Cthulhu Away", "./images/cthulhu.jpg");
+const dogDuck = new Product("Dog-Duck Product", "./images/dog-duck.jpg");
+const dragon = new Product("Dragon Product", "./images/dragon.jpg");
+const pen = new Product("Pen Product", "./images/pen.jpg");
+const petSweep = new Product("Pet sweep Product", "./images/pet-sweep.jpg");
+const scissors = new Product("Scissors Product", "./images/scissors.jpg");
+const shark = new Product("Shark Product", "./images/shark.jpg");
+const sweep = new Product("Sweep Product", "./images/sweep.jpg");
+const tauntaun = new Product("Tauntaun Product", "./images/tauntaun.jpg");
+const unicorn = new Product("Unicors Product", "./images/unicors.jpg");
+const waterCan = new Product("Water can Product", "./images/water-can.jpg");
+const wineGlass = new Product("Wine glass Product", "./images/wine-glass.jpg");
