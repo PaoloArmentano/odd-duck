@@ -4,8 +4,8 @@
 
 // global varaibles
 // querySelector returns the first element in the document that matches
-const productContainer = document.querySelector("div");
-const resultsButton = document.querySelector("section + div");
+const productContainer = document.getElementById("productContainer");
+const resultsButton = document.getElementById("resultsButton");
 const image1 = document.querySelector("section img:first-child");
 const image2 = document.querySelector("section img:nth-child(2)");
 const image3 = document.querySelector("section img:nth-child(3)");
@@ -19,7 +19,7 @@ const maxClicksAllowed = 25;
     return Math.floor(Math.random() * allProducts.length);
   }
   
- function Product(name, src, views){
+ function Product(name, src){
     this.name = name;
     this.src = src;
     this.views = 0;
@@ -69,6 +69,16 @@ const maxClicksAllowed = 25;
    }
  }
 
+ function renderResults() {
+   // console.log("Your results are in!");
+   let ul = document.querySelector("ul");
+   for (let i = 0; i < allProducts.length; i++) {
+     let li = document.createElement("li");
+     li.textContent = `${allProducts[i].name} had ${allProducts[i].views} views and was clicked ${allProducts[i].clicks} times.`;
+     ul.appendChild(li);
+   }
+ }
+
 const bag = new Product("Bag Product", "./images/bag.jpg");
 const banana = new Product("Banana Product", "./images/banana.jpg");
 const bathroom = new Product("Bathroom Product", "./images/bathroom.jpg");
@@ -88,3 +98,8 @@ const tauntaun = new Product("Tauntaun Product", "./images/tauntaun.jpg");
 const unicorn = new Product("Unicors Product", "./images/unicors.jpg");
 const waterCan = new Product("Water can Product", "./images/water-can.jpg");
 const wineGlass = new Product("Wine glass Product", "./images/wine-glass.jpg");
+
+
+renderProducts();
+
+productContainer.addEventListener("click", handleProductClick);
