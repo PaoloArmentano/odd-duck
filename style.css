@@ -2,7 +2,7 @@
 
 *{
     font-family: 'Quicksand', sans-serif;
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(247, 247, 247);
 }
 
 body {
@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-    color: rgb(59, 59, 59);
+    color: rgb(54, 54, 54);
 }
 
 #grid {
@@ -28,9 +28,11 @@ h1 {
 
 img {
     max-width: 400px;
-    border-radius: 5px;
+    max-height: 280px;
+    border-radius: 8px;
     margin: 20px;
     cursor: pointer;
+    border: 2px solid rgb(216, 216, 216);
 }
 
 button{
@@ -40,8 +42,8 @@ button{
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    background-color: white;
-    transition: background-color 0.3s ease;
+    background-color: rgb(201, 201, 201);
+    transition: background-color 1s ease;
 }
 
 button:active{
@@ -49,5 +51,6 @@ button:active{
 }
 
 button:hover{
-    background-color: rgb(254, 239, 219);
+    background-color: rgb(32, 32, 32);
+    color: white;
 }

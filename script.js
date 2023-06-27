@@ -33,6 +33,12 @@ const maxClicksAllowed = 25;
     let product2 = getRandomNumber();
     let product3 = getRandomNumber();
 
+      // how could we prevent goat1 being the same number a goat2?
+      while (product1 === product2 || product1 === product3 || product2 === product3) {
+         product2 = getRandomNumber();
+         product3 = getRandomNumber();
+      }
+
    // now we have two random numbers lets set the attributes of our images in the document.
    image1.src = allProducts[product1].src;
    image2.src = allProducts[product2].src;
@@ -63,7 +69,7 @@ const maxClicksAllowed = 25;
        productContainer.className = "no-voting";
        resultsButton.addEventListener("click", renderResults);
        resultsButton.className = "clicks-allowed";
-       alert("You've used all your votes!")
+       alert("You've used all your votes! Check the results by clicking the 'View Results' button.")
      } else {
        renderProducts();
      }
@@ -78,6 +84,7 @@ const maxClicksAllowed = 25;
      li.textContent = `${allProducts[i].name} had ${allProducts[i].views} views and was clicked ${allProducts[i].clicks} times.`;
      ul.appendChild(li);
    }
+   resultsButton.removeEventListener("click", renderResults);
  }
 
 const bag = new Product("Bag Product", "./images/bag.jpg");
