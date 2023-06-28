@@ -27,12 +27,16 @@ h1 {
 }
 
 img {
-    max-width: 400px;
-    max-height: 280px;
+    max-width: 380px;
+    max-height: 260px;
     border-radius: 8px;
     margin: 20px;
     cursor: pointer;
     border: 2px solid rgb(216, 216, 216);
+}
+
+img:hover {
+    transform: scale(110%);
 }
 
 button{
