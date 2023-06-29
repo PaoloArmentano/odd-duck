@@ -113,67 +113,62 @@ renderProducts();
 
 productContainer.addEventListener("click", handleProductClick);
 
-// function renderChart() {
-//    const productNames = [];
-//    const productViews = [];
-//    const productClicks = [];
+function renderChart() {
+   const productNames = [];
+   const productViews = [];
+   const productClicks = [];
  
-//    for (let i = 0; i < allProducts.length; i++) {
-//      productNames.push(allProducts[i].name);
-//      productViews.push(allProducts[i].views);
-//      productClicks.push(allProducts[i].clicks);
-//    }
+   for (let i = 0; i < allProducts.length; i++) {
+     productNames.push(allProducts[i].name);
+     productViews.push(allProducts[i].views);
+     productClicks.push(allProducts[i].clicks);
+   }
  
-//    const data = {
-//      labels: productNames,
-//      datasets: [
-//        {
-//          label: "Views",
-//          data: productViews,
-//          backgroundColor: ["teal", "coral"],
-//          borderColor: ["tomato", "cornflowerblue"],
-//          borderWidth: 1,
-//        },
-//        {
-//          label: "Clicks",
-//          data: productClicks,
-//          backgroundColor: ["tomato", "cornflowerblue"],
-//          borderColor: ["teal", "coral"],
-//          borderWidth: 1,
-//        },
-//      ],
-//    };
+   const data = {
+     labels: productNames,
+     datasets: [
+       {
+         label: "Views",
+         data: productViews,
+         backgroundColor: ["teal", "coral"],
+         borderColor: ["tomato", "cornflowerblue"],
+         borderWidth: 1,
+       },
+       {
+         label: "Clicks",
+         data: productClicks,
+         backgroundColor: ["tomato", "cornflowerblue"],
+         borderColor: ["teal", "coral"],
+         borderWidth: 1,
+       },
+     ],
+   };
  
-//    const config = {
-//      type: "doughnut",
-//      data: data,
-//    };
+   const config = {
+     type: "bar",
+     data: data,
+   };
  
-//    const productChart = document.getElementById("chart");
-//    const myChart = new Chart(productChart, config);
-//  }
+   const productChart = document.getElementById("chart");
+   const myChart = new Chart(productChart, config);
+ }
 
 //  renderChart();
 
 
 function saveMode() {
-  let resultsProducts = JSON.stringify(allProducts);
-  localStorage.setItem("allProducts", resultsProducts);
+  let jsonProducts = JSON.stringify(allProducts);
+  localStorage.setItem("allProducts", jsonProducts);
 }
 
 function pageLoad() {
   let storedResults = JSON.parse(localStorage.getItem("allProducts"));
   // console.log(storedMode);
-  if (storedResults === null) {
+  if (!storedResults) {
     console.log("null");
-    return;
+    saveMode();
   }
-  // if (storedResults === false) {
-  //   console.log("light");
-  //   enterLightMode();
-  // } else if (storedMode) {
-  //   console.log("dark");
-  //   enterDarkMode();
-  // }
 }
+
+
 pageLoad();
